@@ -41,7 +41,7 @@ int main() {
 	int AQI[4][4][7] = {
 		{
 			// City 1
-			{0, 0, 0, 0, 0, 0, 0},  // Week 1
+			{60, 60, 59, 62, 58, 61, 60},  // Week 1
 			{55, 53, 54, 52, 51, 56, 55},  // Week 2
 			{50, 48, 49, 47, 46, 51, 50},  // Week 3
 			{42, 40, 41, 39, 38, 43, 42}   // Week 4
@@ -72,14 +72,29 @@ int main() {
 
 
 //	for average of month
-
+	
 	for(int i=0; i<4; i++) {
 		cout<<"AVERAGE AQI FOR CITY "<<i+1<<": "<<month_average(AQI,i)<<endl<<endl;
 	}
 
-//improved City
+//improved city
+	
+	float improved_cities[4]  = {0};
+	for(int i=0;i<4;i++){
+		improved_cities[i] = improvement_calc(AQI,i); 
+	
+	}
+	int max_improved_city = 1;
+	float temp = improved_cities[0];
+	for(int i=0;i<4;i++){
+		if(temp < improved_cities[i]){
+			temp = improved_cities[i];
+			max_improved_city = i+1;
+		}
+	}
+	
+	cout<<"MAX IMPROVED CITY:  "<<max_improved_city<<endl;
 
-	cout<<improvement_calc(AQI,0);
 
 
 
