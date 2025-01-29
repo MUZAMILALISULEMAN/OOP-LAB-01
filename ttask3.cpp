@@ -2,13 +2,14 @@
 using namespace std;
 
 int main(){
-
-int AQI[4][7] = {
-    {150, 180, 200, 170, 190, 210, 220}, // City 1
-    {300, 320, 310, 290, 280, 330, 340}, // City 2
-    {50,  70,  80,  60,  90,  85,  100}, // City 3
-    {400, 420, 450, 430, 440, 460, 480}  // City 4
-};
+int AQI[4][7];
+for(int i=0;i<4;i++){
+	cout<<endl<<"CITY "<<i+1<<": "<<endl;
+	for(int j=0;j<7;j++){
+		cout<<"DAY "<<j+1<<": ";
+		cin>>AQI[i][j];
+	}
+}
 int stars;
 for(int i=0;i<4;i++){
 	cout<<endl<<endl<<"CITY "<<i+1<<": "<<endl;
